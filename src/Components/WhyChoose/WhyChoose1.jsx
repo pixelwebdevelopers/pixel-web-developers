@@ -6,7 +6,7 @@ const WhyChoose1 = () => {
         subtitle: "Why Choose Us",
         title: 'Partnering for Your Digital Success',
         content: 'We deliver exceptional value through technical expertise, creative innovation, and a client-centric approach. Here is why businesses choose Pixel Web Developers in Lahore.',
-        img: '/assets/img/about/01.png',
+        img: '/assets/img/about/02.png',
         list1: 'Agile Development Process',
         list2: 'SEO-Friendly Architecture',
         list3: 'Scalable & Secure Code',
