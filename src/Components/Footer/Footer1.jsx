@@ -35,8 +35,8 @@ const Footer1 = () => {
                             <div className="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                                 <div className="single-footer-widget">
                                     <div className="widget-head">
-                                        <a href="index.html">
-                                            <img src="/assets/img/logo/white-logo.svg" alt="img" />
+                                        <a href="#home">
+                                            <img src="/assets/img/logo/logo.png" alt="img" />
                                         </a>
                                     </div>
                                     <div className="footer-content">
@@ -44,10 +44,10 @@ const Footer1 = () => {
                                             Pixel Web Developers is a premier full-service web design and development agency based in Lahore, Pakistan.
                                         </p>
                                         <div className="social-icon d-flex align-items-center">
-                                            <a href="#"><i className="bi bi-facebook"></i></a>
-                                            <a href="#"><i className="bi bi-twitter"></i></a>
-                                            <a href="#"><i className="bi bi-youtube"></i></a>
-                                            <a href="#"><i className="bi bi-linkedin"></i></a>
+                                            <a href="#contact"><i className="bi bi-facebook"></i></a>
+                                            <a href="#contact"><i className="bi bi-twitter"></i></a>
+                                            <a href="#contact"><i className="bi bi-youtube"></i></a>
+                                            <a href="#contact"><i className="bi bi-linkedin"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -138,7 +138,7 @@ const Footer1 = () => {
                                         <div className="form-check">
                                             <input className="form-check-input" type="checkbox" id="flexCheckChecked" />
                                             <label className="form-check-label" htmlFor="flexCheckChecked">
-                                                I agree to the <a href="#">Privacy Policy.</a>
+                                                I agree to the <a href="#contact">Privacy Policy.</a>
                                             </label>
                                         </div>
                                     </div>
@@ -155,19 +155,19 @@ const Footer1 = () => {
                             </p>
                             <ul className="footer-menu wow fadeInRight" data-wow-delay=".5s">
                                 <li>
-                                    <a href="#">
+                                    <a href="#contact">
                                         Terms & Condition
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="#contact">
                                         Privacy Policy
                                     </a>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <a href="#" id="scrollUp" className="scroll-icon">
+                    <a href="#home" id="scrollUp" className="scroll-icon">
                         <i className="bi bi-arrow-up"></i>
                     </a>
                 </div>
