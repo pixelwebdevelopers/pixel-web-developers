@@ -126,7 +126,7 @@ const Footer1 = () => {
                                             </li>
                                             <li>
                                                 <i className="fa-solid fa-phone-volume"></i>
-                                                <a href="tel:+923274428151">+923274428151</a>
+                                                <a href="tel:+923287623637">+92 328 7623637</a>
                                             </li>
                                         </ul>
                                         <div className="footer-input">

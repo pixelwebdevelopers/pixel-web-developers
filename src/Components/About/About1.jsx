@@ -28,10 +28,19 @@ const About1 = () => {
                 settings: {
                     slidesToShow: 3,
                 }
-            }, {
-                breakpoint: 575,
+            },
+            {
+                breakpoint: 767,
                 settings: {
                     slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    centerMode: true,
+                    centerPadding: '40px',
                 }
             }
         ]

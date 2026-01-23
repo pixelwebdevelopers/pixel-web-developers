@@ -8149,3 +8149,31 @@ input.main-search-input::placeholder {
     display: none;
   }
 }
+
+/* Mobile Brand Slider Fixes */
+@media (max-width: 480px) {
+  .about-section .brand-wrapper .brand-slider {
+    width: 100%;
+    overflow: hidden;
+  }
+  .about-section .brand-wrapper .brand-img {
+    text-align: center;
+    padding: 0 10px;
+  }
+  .about-section .brand-wrapper .brand-img img {
+    max-width: 150px;
+    height: auto;
+    margin: 0 auto;
+  }
+  .about-section .brand-wrapper .brand-title {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 767px) and (min-width: 481px) {
+  .about-section .brand-wrapper .brand-img img {
+    max-width: 130px;
+    height: auto;
+  }
+}
