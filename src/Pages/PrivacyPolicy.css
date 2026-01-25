@@ -1,0 +1,441 @@
+/* Privacy Policy Page Styles */
+
+/* Page Header */
+.privacy-policy-page .privacy-header {
+    padding: 140px 0 80px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #17012C 0%, #2D1B4E 50%, #6A47ED 100%);
+}
+
+.privacy-policy-page .privacy-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    z-index: 0;
+}
+
+.privacy-policy-page .privacy-header-content h1 {
+    font-size: 56px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 767px) {
+    .privacy-policy-page .privacy-header-content h1 {
+        font-size: 36px;
+    }
+}
+
+.privacy-policy-page .breadcrumb {
+    background: transparent;
+    margin-bottom: 0;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.privacy-policy-page .breadcrumb-item {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.privacy-policy-page .breadcrumb-item a {
+    color: #C6F806;
+    transition: all 0.3s ease;
+}
+
+.privacy-policy-page .breadcrumb-item a:hover {
+    color: #ffffff;
+}
+
+.privacy-policy-page .breadcrumb-item.active {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.privacy-policy-page .breadcrumb-item + .breadcrumb-item::before {
+    content: "›";
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Privacy Content Section */
+.privacy-content-section {
+    background-color: var(--white);
+}
+
+.privacy-content-wrapper {
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 10px 60px rgba(106, 71, 237, 0.08);
+    padding: 60px;
+}
+
+@media (max-width: 767px) {
+    .privacy-content-wrapper {
+        padding: 30px 20px;
+    }
+}
+
+/* Intro Section */
+.privacy-intro {
+    margin-bottom: 50px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border);
+}
+
+.privacy-intro .intro-text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--text);
+}
+
+.privacy-intro .last-updated {
+    margin-top: 20px;
+    padding: 15px 25px;
+    background: linear-gradient(135deg, rgba(106, 71, 237, 0.08) 0%, rgba(198, 248, 6, 0.08) 100%);
+    border-radius: 10px;
+    display: inline-block;
+    color: var(--header);
+}
+
+/* Policy Sections */
+.policy-section {
+    margin-bottom: 45px;
+}
+
+.policy-section h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--header);
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid var(--theme);
+    display: inline-block;
+}
+
+@media (max-width: 767px) {
+    .policy-section h2 {
+        font-size: 22px;
+    }
+}
+
+.policy-section h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--header);
+    margin: 30px 0 15px;
+}
+
+.policy-section h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--header);
+    margin-bottom: 8px;
+}
+
+.policy-section p {
+    color: var(--text);
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+/* Policy List */
+.policy-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.policy-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px 20px;
+    background: var(--bg);
+    border-radius: 10px;
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+}
+
+.policy-list li:hover {
+    background: linear-gradient(135deg, rgba(106, 71, 237, 0.08) 0%, rgba(198, 248, 6, 0.08) 100%);
+    transform: translateX(5px);
+}
+
+.policy-list li i {
+    color: var(--theme);
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+.policy-list li span {
+    color: var(--text);
+    line-height: 1.7;
+}
+
+.policy-list li span strong {
+    color: var(--header);
+}
+
+/* Security Features */
+.security-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+@media (max-width: 767px) {
+    .security-features {
+        grid-template-columns: 1fr;
+    }
+}
+
+.security-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 30px;
+    background: var(--bg);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.security-item:hover {
+    background: linear-gradient(135deg, rgba(106, 71, 237, 0.1) 0%, rgba(198, 248, 6, 0.1) 100%);
+    box-shadow: 0 10px 30px rgba(106, 71, 237, 0.1);
+}
+
+.security-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--theme);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.security-icon i {
+    color: var(--white);
+    font-size: 24px;
+}
+
+.security-content h4 {
+    margin-bottom: 8px;
+}
+
+.security-content p {
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+/* Cookie Notice */
+.cookie-notice {
+    background: linear-gradient(135deg, rgba(106, 71, 237, 0.08) 0%, rgba(198, 248, 6, 0.08) 100%);
+    padding: 20px 25px;
+    border-radius: 10px;
+    border-left: 4px solid var(--theme);
+    margin-top: 20px;
+}
+
+/* Rights Grid */
+.rights-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+@media (max-width: 991px) {
+    .rights-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 575px) {
+    .rights-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.rights-item {
+    text-align: center;
+    padding: 30px 20px;
+    background: var(--bg);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.rights-item:hover {
+    background: var(--theme);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(106, 71, 237, 0.2);
+}
+
+.rights-item i {
+    font-size: 36px;
+    color: var(--theme);
+    margin-bottom: 15px;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.rights-item:hover i {
+    color: var(--white);
+}
+
+.rights-item h4 {
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.rights-item:hover h4 {
+    color: var(--white);
+}
+
+.rights-item p {
+    font-size: 14px;
+    margin-bottom: 0;
+    transition: all 0.3s ease;
+}
+
+.rights-item:hover p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Reset ::before pseudo-element on contact-section that was causing overlay */
+.privacy-policy-page .policy-section.contact-section::before,
+.privacy-policy-page .policy-section.contact-section::after {
+    display: none !important;
+    content: none !important;
+    background: transparent !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* Contact Section - High Specificity */
+.privacy-policy-page .privacy-content-wrapper .policy-section.contact-section .contact-info-box {
+    background: linear-gradient(135deg, #6A47ED 0%, #8B6CF6 100%) !important;
+    border-radius: 20px !important;
+    padding: 40px !important;
+    margin-top: 30px !important;
+    display: block !important;
+    position: relative !important;
+    overflow: visible !important;
+}
+
+.privacy-policy-page .contact-info-box .contact-item {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 20px !important;
+    padding: 20px 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+    background: transparent !important;
+}
+
+.privacy-policy-page .contact-info-box .contact-item:last-child {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+}
+
+.privacy-policy-page .contact-info-box .contact-item:first-child {
+    padding-top: 0 !important;
+}
+
+.privacy-policy-page .contact-info-box .contact-item .contact-icon {
+    width: 50px !important;
+    height: 50px !important;
+    min-width: 50px !important;
+    max-width: 50px !important;
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-radius: 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+}
+
+.privacy-policy-page .contact-info-box .contact-item .contact-icon i {
+    color: #ffffff !important;
+    font-size: 20px !important;
+    line-height: 1 !important;
+    width: auto !important;
+    height: auto !important;
+    background: transparent !important;
+}
+
+.privacy-policy-page .contact-info-box .contact-item .contact-text {
+    flex: 1 !important;
+    display: block !important;
+}
+
+.privacy-policy-page .contact-info-box .contact-item .contact-text strong {
+    color: #ffffff !important;
+    font-size: 16px !important;
+    display: block !important;
+    margin-bottom: 5px !important;
+}
+
+.privacy-policy-page .contact-info-box .contact-item .contact-text p {
+    color: rgba(255, 255, 255, 0.85) !important;
+    margin-bottom: 0 !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+}
+
+.privacy-policy-page .contact-info-box .contact-item .contact-text a {
+    color: rgba(255, 255, 255, 0.85) !important;
+    transition: all 0.3s ease !important;
+}
+
+.privacy-policy-page .contact-info-box .contact-item .contact-text a:hover {
+    color: #ffffff !important;
+}
+
+/* Policy Footer */
+.policy-footer {
+    margin-top: 50px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+.policy-footer p {
+    font-size: 16px;
+    color: var(--text);
+    margin-bottom: 30px;
+}
+
+.back-home .theme-btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 35px;
+    border: 2px solid var(--theme);
+    border-radius: 30px;
+    color: var(--theme);
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.back-home .theme-btn-outline:hover {
+    background: var(--theme);
+    color: var(--white);
+}
+
+.back-home .theme-btn-outline i {
+    font-size: 18px;
+}

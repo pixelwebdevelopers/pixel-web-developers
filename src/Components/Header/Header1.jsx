@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import Nav from './Nav';
 export default function Header1({ variant }) {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+  const getHref = (anchor) => isHomePage ? anchor : `/${anchor}`;
   const [mobileToggle, setMobileToggle] = useState(false);
   const [isSticky, setIsSticky] = useState();
   const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -37,7 +41,7 @@ export default function Header1({ variant }) {
           <div className="container">
             <div className="cs_main_header_in">
               <div className="cs_main_header_left">
-                <a className="cs_site_branding" href="#home">
+                <a className="cs_site_branding" href={getHref('#home')}>
                   <img src="/assets/img/logo/logo.png" alt="Logo" />
                 </a>
               </div>
@@ -62,7 +66,7 @@ export default function Header1({ variant }) {
                   <a onClick={() => setSearchToggle(!searchToggle)} className="search-trigger search-icon"><i className="bi bi-search"></i></a>
 
                   <div className="main-button">
-                    <a href="#contact">
+                    <a href={getHref('#contact')}>
                       <span className="theme-btn"> Get Started </span><span className="arrow-btn"><i className="bi bi-arrow-right"></i></span></a>
                   </div>
 

@@ -1,5 +1,75 @@
+import { useRef, useState } from "react";
+import emailjs from '@emailjs/browser';
 
 const ContactInfo1 = () => {
+    const form = useRef();
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState(null); // 'success', 'error', or null
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        number: '',
+        subject: 'subject',
+        message: '',
+        agreed: false
+    });
+
+    const handleChange = (e) => {
+        const { name, value, type, checked } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: type === 'checkbox' ? checked : value
+        }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        // Basic validation
+        if (!formData.name || !formData.email || !formData.message) {
+            setSubmitStatus('error');
+            setTimeout(() => setSubmitStatus(null), 3000);
+            return;
+        }
+
+        if (!formData.agreed) {
+            alert('Please agree to the Privacy Policy before submitting.');
+            return;
+        }
+
+        setIsSubmitting(true);
+        setSubmitStatus(null);
+
+        // EmailJS credentials from environment variables
+        const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+        const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+        const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+        emailjs.sendForm(serviceId, templateId, form.current, publicKey)
+            .then((result) => {
+                console.log('Email sent successfully:', result.text);
+                setSubmitStatus('success');
+                // Reset form
+                setFormData({
+                    name: '',
+                    email: '',
+                    number: '',
+                    subject: 'subject',
+                    message: '',
+                    agreed: false
+                });
+            })
+            .catch((error) => {
+                console.error('Email send failed:', error.text);
+                setSubmitStatus('error');
+            })
+            .finally(() => {
+                setIsSubmitting(false);
+                // Clear status after 5 seconds
+                setTimeout(() => setSubmitStatus(null), 5000);
+            });
+    };
+
     return (
         <section className="contact-section fix section-padding">
             <div className="container">
@@ -21,53 +91,123 @@ const ContactInfo1 = () => {
                         <div className="col-xl-6">
                             <div className="contact-form-area">
                                 <h3>Get in Touch</h3>
-                                <form action="#" id="contact-form" method="POST">
+
+                                {/* Status Messages */}
+                                {submitStatus === 'success' && (
+                                    <div className="alert alert-success mb-4" role="alert">
+                                        <i className="bi bi-check-circle-fill me-2"></i>
+                                        Thank you! Your message has been sent successfully. We'll get back to you soon.
+                                    </div>
+                                )}
+                                {submitStatus === 'error' && (
+                                    <div className="alert alert-danger mb-4" role="alert">
+                                        <i className="bi bi-exclamation-circle-fill me-2"></i>
+                                        Oops! Something went wrong. Please try again or contact us directly.
+                                    </div>
+                                )}
+
+                                <form ref={form} onSubmit={handleSubmit} id="contact-form">
                                     <div className="row g-4">
                                         <div className="col-lg-6">
                                             <div className="form-clt">
-                                                <input type="text" name="name" id="name" placeholder="Full Name" />
+                                                <input
+                                                    type="text"
+                                                    name="name"
+                                                    id="name"
+                                                    placeholder="Full Name"
+                                                    value={formData.name}
+                                                    onChange={handleChange}
+                                                    required
+                                                />
                                             </div>
                                         </div>
                                         <div className="col-lg-6">
                                             <div className="form-clt">
-                                                <input type="text" name="email" id="email" placeholder="Email Address" />
+                                                <input
+                                                    type="email"
+                                                    name="email"
+                                                    id="email"
+                                                    placeholder="Email Address"
+                                                    value={formData.email}
+                                                    onChange={handleChange}
+                                                    required
+                                                />
                                             </div>
                                         </div>
                                         <div className="col-lg-6">
                                             <div className="form-clt">
-                                                <input type="number" name="number" id="number" placeholder="Phone Number" />
+                                                <input
+                                                    type="tel"
+                                                    name="number"
+                                                    id="number"
+                                                    placeholder="Phone Number"
+                                                    value={formData.number}
+                                                    onChange={handleChange}
+                                                />
                                             </div>
                                         </div>
                                         <div className="col-lg-6">
                                             <div className="form-clt">
-                                                <select name="orderby" className="single-select" aria-label="Shop order">
+                                                <select
+                                                    name="subject"
+                                                    className="single-select"
+                                                    aria-label="Subject"
+                                                    value={formData.subject}
+                                                    onChange={handleChange}
+                                                >
                                                     <option value="subject">Subject</option>
-                                                    <option value="complain">Complain</option>
-                                                    <option value="greetings">Greetings</option>
-                                                    <option value="date">Expire Date</option>
-                                                    <option value="price">About Price</option>
-                                                    <option value="order">About order</option>
+                                                    <option value="web-development">Web Development</option>
+                                                    <option value="ui-ux-design">UI/UX Design</option>
+                                                    <option value="e-commerce">E-commerce Solutions</option>
+                                                    <option value="seo">SEO Optimization</option>
+                                                    <option value="general">General Inquiry</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div className="col-12">
                                             <div className="form-clt">
-                                                <textarea name="message" id="message" placeholder="Messages"></textarea>
+                                                <textarea
+                                                    name="message"
+                                                    id="message"
+                                                    placeholder="Your Message"
+                                                    value={formData.message}
+                                                    onChange={handleChange}
+                                                    required
+                                                ></textarea>
                                             </div>
                                         </div>
                                         <div className="col-12">
                                             <div className="form-check">
-                                                <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                                                <input
+                                                    className="form-check-input"
+                                                    type="checkbox"
+                                                    name="agreed"
+                                                    id="flexCheckChecked"
+                                                    checked={formData.agreed}
+                                                    onChange={handleChange}
+                                                />
                                                 <label className="form-check-label" htmlFor="flexCheckChecked">
-                                                    Collaboratively formulate principle capital. Progressively evolve user
+                                                    I agree to the Privacy Policy and consent to being contacted
                                                 </label>
                                             </div>
                                         </div>
                                         <div className="col-lg-12">
-                                            <button type="submit" className="theme-btn">
-                                                Submit Now
-                                                <i className="bi bi-arrow-right ms-1"></i>
-
+                                            <button
+                                                type="submit"
+                                                className="theme-btn"
+                                                disabled={isSubmitting}
+                                            >
+                                                {isSubmitting ? (
+                                                    <>
+                                                        <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                                                        Sending...
+                                                    </>
+                                                ) : (
+                                                    <>
+                                                        Submit Now
+                                                        <i className="bi bi-arrow-right ms-1"></i>
+                                                    </>
+                                                )}
                                             </button>
                                         </div>
                                     </div>
@@ -118,7 +258,7 @@ const ContactInfo1 = () => {
                                         </div>
                                         <div className="content">
                                             <h3>
-                                                <a href="mailto::info@pixelwebdevelopers.com">info@pixelwebdevelopers.com</a>
+                                                <a href="mailto:info@pixelwebdevelopers.com">info@pixelwebdevelopers.com</a>
                                             </h3>
                                         </div>
                                     </div>

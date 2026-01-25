@@ -1,7 +1,11 @@
 import { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import loadBackgroudImages from "../Common/loadBackgroudImages";
 
 const Footer1 = () => {
+    const location = useLocation();
+    const isHomePage = location.pathname === '/';
+    const getHref = (anchor) => isHomePage ? anchor : `/${anchor}`;
 
     useEffect(() => {
         loadBackgroudImages();
@@ -22,7 +26,7 @@ const Footer1 = () => {
                             Transform Your Vision <br /> Into Digital Reality
                         </h2>
                         <div className="main-button wow fadeInUp" data-wow-delay=".5s">
-                            <a href="#contact"> <span className="theme-btn"> talk TO  A SPECIALIST </span><span className="arrow-btn"> <i className="bi bi-arrow-right"></i></span></a>
+                            <a href={getHref('#contact')}> <span className="theme-btn"> talk TO  A SPECIALIST </span><span className="arrow-btn"> <i className="bi bi-arrow-right"></i></span></a>
                         </div>
                     </div>
                 </div>
@@ -35,7 +39,7 @@ const Footer1 = () => {
                             <div className="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                                 <div className="single-footer-widget">
                                     <div className="widget-head">
-                                        <a href="#home">
+                                        <a href={getHref('#home')}>
                                             <img src="/assets/img/logo/logo.png" alt="img" />
                                         </a>
                                     </div>
@@ -44,10 +48,10 @@ const Footer1 = () => {
                                             Pixel Web Developers is a premier full-service web design and development agency based in Lahore, Pakistan.
                                         </p>
                                         <div className="social-icon d-flex align-items-center">
-                                            <a href="#contact"><i className="bi bi-facebook"></i></a>
-                                            <a href="#contact"><i className="bi bi-twitter"></i></a>
-                                            <a href="#contact"><i className="bi bi-youtube"></i></a>
-                                            <a href="#contact"><i className="bi bi-linkedin"></i></a>
+                                            <a href={getHref('#contact')}><i className="bi bi-facebook"></i></a>
+                                            <a href={getHref('#contact')}><i className="bi bi-twitter"></i></a>
+                                            <a href={getHref('#contact')}><i className="bi bi-youtube"></i></a>
+                                            <a href={getHref('#contact')}><i className="bi bi-linkedin"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -59,23 +63,29 @@ const Footer1 = () => {
                                     </div>
                                     <ul className="list-area">
                                         <li>
-                                            <a href="#about">
+                                            <a href={getHref('#about')}>
                                                 <i className="bi bi-arrow-right"></i>
                                                 About Us
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#service">
+                                            <a href={getHref('#service')}>
                                                 <i className="bi bi-arrow-right"></i>
                                                 Our Services
                                             </a>
                                         </li>
 
                                         <li>
-                                            <a href="#contact">
+                                            <a href={getHref('#contact')}>
                                                 <i className="bi bi-arrow-right"></i>
                                                 Contact Us
                                             </a>
+                                        </li>
+                                        <li>
+                                            <Link to="/privacy-policy">
+                                                <i className="bi bi-arrow-right"></i>
+                                                Privacy Policy
+                                            </Link>
                                         </li>
                                     </ul>
                                 </div>
@@ -87,25 +97,25 @@ const Footer1 = () => {
                                     </div>
                                     <ul className="list-area">
                                         <li>
-                                            <a href="#service">
+                                            <a href={getHref('#service')}>
                                                 <i className="bi bi-arrow-right"></i>
                                                 Web Development
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#service">
+                                            <a href={getHref('#service')}>
                                                 <i className="bi bi-arrow-right"></i>
                                                 UI/UX Design
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#service">
+                                            <a href={getHref('#service')}>
                                                 <i className="bi bi-arrow-right"></i>
                                                 E-commerce Solutions
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#service">
+                                            <a href={getHref('#service')}>
                                                 <i className="bi bi-arrow-right"></i>
                                                 SEO Optimization
                                             </a>
@@ -138,7 +148,7 @@ const Footer1 = () => {
                                         <div className="form-check">
                                             <input className="form-check-input" type="checkbox" id="flexCheckChecked" />
                                             <label className="form-check-label" htmlFor="flexCheckChecked">
-                                                I agree to the <a href="#contact">Privacy Policy.</a>
+                                                I agree to the <Link to="/privacy-policy">Privacy Policy.</Link>
                                             </label>
                                         </div>
                                     </div>
@@ -155,19 +165,19 @@ const Footer1 = () => {
                             </p>
                             <ul className="footer-menu wow fadeInRight" data-wow-delay=".5s">
                                 <li>
-                                    <a href="#contact">
+                                    <a href={getHref('#contact')}>
                                         Terms & Condition
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#contact">
+                                    <Link to="/privacy-policy">
                                         Privacy Policy
-                                    </a>
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <a href="#home" id="scrollUp" className="scroll-icon">
+                    <a href={getHref('#home')} id="scrollUp" className="scroll-icon">
                         <i className="bi bi-arrow-up"></i>
                     </a>
                 </div>
