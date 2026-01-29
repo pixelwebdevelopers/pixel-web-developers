@@ -30,13 +30,13 @@ const Pricing1 = ({ CoulmnClass }) => {
                                     <img src="/assets/img/arrow.png" alt="img" />
                                 </div>
                                 <ul className="nav" role="tablist">
-                                    <li className={`nav-item wow fadeInUp ${isActive === 'monthly' ? 'active' : ''}`} onClick={() => setIsActive('monthly')} data-wow-delay=".3s" role="presentation">
-                                        <a href="#monthly" data-bs-toggle="tab" className="nav-link active" aria-selected="true" role="tab">
+                                    <li className="nav-item wow fadeInUp" data-wow-delay=".3s" role="presentation" onClick={() => setIsActive('monthly')}>
+                                        <a href="#monthly" className={`nav-link ${isActive === 'monthly' ? 'active' : ''}`} aria-selected={isActive === 'monthly'} role="tab">
                                             Monthly
                                         </a>
                                     </li>
-                                    <li className={`nav-item ${isActive === 'yearly' ? 'active' : ''}`} onClick={() => setIsActive('yearly')} data-wow-delay=".5s" role="presentation">
-                                        <a href="#yearly" data-bs-toggle="tab" className="nav-link" aria-selected="false" role="tab" tabIndex="-1">
+                                    <li className="nav-item" data-wow-delay=".5s" role="presentation" onClick={() => setIsActive('yearly')}>
+                                        <a href="#yearly" className={`nav-link ${isActive === 'yearly' ? 'active' : ''}`} aria-selected={isActive === 'yearly'} role="tab">
                                             Yearly
                                         </a>
                                     </li>
@@ -54,17 +54,17 @@ const Pricing1 = ({ CoulmnClass }) => {
                                     <div className="col-xl-6 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
                                         <PricingCard
                                             addclass="pricing-box-items"
-                                            title="Business Plan"
-                                            price="$150"
-                                            month="Project"
+                                            title="Starter Plan"
+                                            price="$99"
+                                            month="Month"
                                             FeatureList={[
-                                                "Custom Website Design",
-                                                "Mobile Responsive",
+                                                "Single Page Website",
+                                                "Mobile Responsive Design",
                                                 "Basic SEO Setup",
-                                                "Speed Optimization",
-                                                "1 Month Support",
-                                                "Social Media Integration",
-                                                "Contact Form",
+                                                "Contact Form Integration",
+                                                "Social Media Links",
+                                                "1 Month Free Support",
+                                                "SSL Certificate Setup",
                                             ]}
                                             btnurl="#contact"
                                             btnname="Get Started Now"
@@ -73,16 +73,16 @@ const Pricing1 = ({ CoulmnClass }) => {
                                     <div className="col-xl-6 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
                                         <PricingCard
                                             addclass="pricing-box-items style-2"
-                                            title="Enterprise Plan"
-                                            price="$400"
-                                            month="Project"
+                                            title="Professional Plan"
+                                            price="$249"
+                                            month="Month"
                                             FeatureList={[
-                                                "Advanced Custom Design",
-                                                "E-commerce Functionality",
-                                                "Advanced SEO",
-                                                "Performance Tuning",
-                                                "6 Months Support",
-                                                "Payment Gateway",
+                                                "Multi-Page Website (5 Pages)",
+                                                "Custom UI/UX Design",
+                                                "Advanced SEO Optimization",
+                                                "E-commerce Integration",
+                                                "Payment Gateway Setup",
+                                                "3 Months Free Support",
                                                 "Admin Dashboard",
                                             ]}
                                             btnurl="#contact"
@@ -96,17 +96,17 @@ const Pricing1 = ({ CoulmnClass }) => {
                                     <div className="col-xl-6 col-lg-6 col-md-6">
                                         <PricingCard
                                             addclass="pricing-box-items"
-                                            title="Business Plan"
-                                            price="$150"
+                                            title="Starter Plan"
+                                            price="$899"
                                             month="Year"
                                             FeatureList={[
-                                                "Custom Website Design",
-                                                "Mobile Responsive",
+                                                "Single Page Website",
+                                                "Mobile Responsive Design",
                                                 "Basic SEO Setup",
-                                                "Speed Optimization",
-                                                "1 Month Support",
-                                                "Social Media Integration",
-                                                "Contact Form",
+                                                "Contact Form Integration",
+                                                "Social Media Links",
+                                                "12 Months Free Support",
+                                                "SSL Certificate Setup",
                                             ]}
                                             btnurl="#contact"
                                             btnname="Get Started Now"
@@ -115,16 +115,16 @@ const Pricing1 = ({ CoulmnClass }) => {
                                     <div className="col-xl-6 col-lg-6 col-md-6">
                                         <PricingCard
                                             addclass="pricing-box-items style-2"
-                                            title="Enterprise Plan"
-                                            price="$400"
+                                            title="Professional Plan"
+                                            price="$2,249"
                                             month="Year"
                                             FeatureList={[
-                                                "Advanced Custom Design",
-                                                "E-commerce Functionality",
-                                                "Advanced SEO",
-                                                "Performance Tuning",
-                                                "6 Months Support",
-                                                "Payment Gateway",
+                                                "Multi-Page Website (5 Pages)",
+                                                "Custom UI/UX Design",
+                                                "Advanced SEO Optimization",
+                                                "E-commerce Integration",
+                                                "Payment Gateway Setup",
+                                                "12 Months Free Support",
                                                 "Admin Dashboard",
                                             ]}
                                             btnurl="#contact"

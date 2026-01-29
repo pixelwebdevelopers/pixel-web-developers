@@ -48,10 +48,9 @@ const Footer1 = () => {
                                             Pixel Web Developers is a premier full-service web design and development agency based in Lahore, Pakistan.
                                         </p>
                                         <div className="social-icon d-flex align-items-center">
-                                            <a href={getHref('#contact')}><i className="bi bi-facebook"></i></a>
-                                            <a href={getHref('#contact')}><i className="bi bi-twitter"></i></a>
-                                            <a href={getHref('#contact')}><i className="bi bi-youtube"></i></a>
-                                            <a href={getHref('#contact')}><i className="bi bi-linkedin"></i></a>
+                                            <a href="https://www.instagram.com/pixel_web_dev/" target="_blank" rel="noopener noreferrer"><i className="bi bi-instagram"></i></a>
+                                            <a href="https://www.facebook.com/people/Pixel-Web-Developers/61587056282677/" target="_blank" rel="noopener noreferrer"><i className="bi bi-facebook"></i></a>
+                                            <a href="https://www.linkedin.com/company/pixel-web-developers/" target="_blank" rel="noopener noreferrer"><i className="bi bi-linkedin"></i></a>
                                         </div>
                                     </div>
                                 </div>
